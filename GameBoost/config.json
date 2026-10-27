@@ -1,0 +1,62 @@
+{
+  "protect": {
+    "windowedApps": true,
+    "listeningPorts": true,
+    "processes": [
+      "Code", "Code - Insiders", "Cursor", "Windsurf", "devenv", "idea64", "pycharm64", "webstorm64", "rider64", "studio64", "sublime_text", "notepad++",
+      "WindowsTerminal", "OpenConsole", "powershell", "pwsh", "cmd", "conhost", "bash", "git", "ssh",
+      "node", "bun", "deno", "python", "pythonw", "java", "javaw", "dotnet", "php", "php-cgi", "ruby", "go",
+      "Docker Desktop", "com.docker.backend", "com.docker.build", "vmmem", "vmmemWSL", "wsl", "wslhost", "wslservice",
+      "postgres", "mysqld", "mongod", "redis-server", "nginx", "httpd", "ollama",
+      "obs64", "Discord", "steam", "steamwebhelper", "EpicGamesLauncher", "upc", "EADesktop", "GalaxyClient", "Battle.net"
+    ]
+  },
+
+  "boost": {
+    "highPerformancePower": true,
+
+    "pauseServices": [
+      { "name": "WSearch",         "enabled": true,  "why": "Windows Search indexing - heavy disk and CPU use in the background" },
+      { "name": "SysMain",         "enabled": true,  "why": "Superfetch - preloads apps into RAM, competes with games for memory and disk" },
+      { "name": "DiagTrack",       "enabled": true,  "why": "Telemetry uploads" },
+      { "name": "DoSvc",           "enabled": true,  "why": "Delivery Optimization - shares Windows updates with other PCs" },
+      { "name": "WerSvc",          "enabled": true,  "why": "Error reporting" },
+      { "name": "MapsBroker",      "enabled": true,  "why": "Offline maps updates" },
+      { "name": "Spooler",         "enabled": true,  "why": "Print queue - set to false if you print while gaming" },
+      { "name": "edgeupdate",      "enabled": true,  "why": "Edge updater" },
+      { "name": "edgeupdatem",     "enabled": true,  "why": "Edge updater" },
+      { "name": "gupdate",         "enabled": true,  "why": "Google updater" },
+      { "name": "gupdatem",        "enabled": true,  "why": "Google updater" },
+      { "name": "AdobeARMservice", "enabled": true,  "why": "Adobe updater" },
+      { "name": "wuauserv",        "enabled": false, "why": "Windows Update - off by default: stopping it mid-install can leave an update half done" },
+      { "name": "BITS",            "enabled": false, "why": "Background downloads - off by default, some apps need it" }
+    ],
+
+    "closeApps": [
+      { "name": "OneDrive",            "enabled": true,  "relaunch": true,  "relaunchArgs": "/background", "why": "Pauses cloud sync" },
+      { "name": "Dropbox",             "enabled": true,  "relaunch": true,  "relaunchArgs": "",            "why": "Pauses cloud sync" },
+      { "name": "GoogleDriveFS",       "enabled": true,  "relaunch": true,  "relaunchArgs": "",            "why": "Pauses cloud sync" },
+      { "name": "AdobeARM",            "enabled": true,  "relaunch": false, "relaunchArgs": "",            "why": "Adobe updater" },
+      { "name": "AdobeCollabSync",     "enabled": true,  "relaunch": false, "relaunchArgs": "",            "why": "Adobe background sync" },
+      { "name": "CCXProcess",          "enabled": true,  "relaunch": false, "relaunchArgs": "",            "why": "Adobe Creative Cloud helper" },
+      { "name": "PhoneExperienceHost", "enabled": true,  "relaunch": false, "relaunchArgs": "",            "why": "Phone Link (restarts itself when opened)" },
+      { "name": "Widgets",             "enabled": true,  "relaunch": false, "relaunchArgs": "",            "why": "Windows Widgets (restart when opened)" },
+      { "name": "WidgetService",       "enabled": true,  "relaunch": false, "relaunchArgs": "",            "why": "Windows Widgets (restart when opened)" },
+      { "name": "msedge",              "enabled": false, "relaunch": false, "relaunchArgs": "",            "why": "Edge running in the background with no window open" },
+      { "name": "ms-teams",            "enabled": false, "relaunch": false, "relaunchArgs": "",            "why": "Teams in the background - you will miss messages" },
+      { "name": "Slack",               "enabled": false, "relaunch": false, "relaunchArgs": "",            "why": "Slack in the background - you will miss messages" },
+      { "name": "Spotify",             "enabled": false, "relaunch": false, "relaunchArgs": "",            "why": "Spotify in the tray" }
+    ],
+
+    "lowerPriority": {
+      "enabled": true,
+      "processes": [ "Code", "Code - Insiders", "Cursor", "chrome", "msedge", "firefox", "brave", "opera", "Slack", "ms-teams", "Teams" ]
+    }
+  },
+
+  "games": {
+    "extraLibraryFolders": [],
+    "extraGameFolders": [],
+    "skipExePattern": "(?i)(unins|setup|install|redist|vcredist|directx|dxsetup|dotnet|prereq|crash|report|cleanup|touchup|activation|cefprocess|webhelper|helper)"
+  }
+}
